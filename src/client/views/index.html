@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2ccf822415.js" crossorigin="anonymous"></script>
+    <title>Travel App</title>
+</head>
+<body>
+    <div class="loader load-js hidden">
+        <div class="load-ring lds-dual-ring"></div>
+    </div>
+    <div class="container">
+        <div class="app">
+            <h1>Travel Planner</h1>
+            <p id="travel-logo" class="">
+                <i class="fas fa-globe fa-7x"></i>
+            </p>
+            <div class="trip">
+                <p>My Trips</p>
+                <!-- <button type="submit" id="addTrip">+add trip</button> -->
+            </div>
+            <section class="session">
+                <form class="bookTrip">
+                    <div class="tripOrder">
+                        <span>My trip to: </span><input type="text" id="location" placeholder="Enter your destination">
+                    </div>
+                    <div class="tripOrder">
+                        <span>Departing: </span><input type="date" id="departing">
+                    </div>
+                    <div class="tripOrder">
+                        <span>Return Date: </span><input type="date" id="returnDate">
+                    </div>
+                    <div class="ticketDecision">
+                        <button type="submit" id="saveTrip">Create Trip</button>
+                        <button type="submit" id="clearTrip">Clear</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="trips my-trips">
+            </section>
+        </div>
+        <footer class="footer">
+            <p>Developed by Roland Orobola</p>
+            <p>Connect with me:</p>
+            <div class="social-links">
+                <a href="https://github.com/rolandexplore93" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                    <!-- <span class="visually-hidden">GitHUb</span> -->
+                </a>
+                <a href="https://www.linkedin.com/in/roland-orobola-607439106/" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    <!-- <span class="visually-hidden">LinkedIn</span> -->
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker
+                    .register('/service-worker.js')
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
