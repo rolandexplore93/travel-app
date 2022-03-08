@@ -33,11 +33,15 @@ app.get('/', (req, res) => {
 // receive the request from client side and make an api call 
 app.post('/trip', createTripData);
 
+const GEONAMES_APIKEY = 'rolandexplore93';
+const WEATHERBIT_APIKEY = '363a618d9ba64b35a0d136457f32956f';
+const PIXABAY_APIKEY = '25980875-6c6d122a3737d279b8daf3a97';
+
 async function createTripData(req, res){
     // Get all api keys
-    const callToGeonames = process.env.GEONAMES_APIKEY;
-    const callToWeatherbit = process.env.WEATHERBIT_APIKEY;
-    const callToPixabay = process.env.PIXABAY_APIKEY;
+    const callToGeonames = GEONAMES_APIKEY;
+    const callToWeatherbit = WEATHERBIT_APIKEY;
+    const callToPixabay = PIXABAY_APIKEY;
 
     // create an empty object to store the final data
     const tripDataInformation = {};
